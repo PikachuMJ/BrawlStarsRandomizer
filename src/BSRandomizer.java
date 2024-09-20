@@ -1,14 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 @SuppressWarnings("ALL")
 public class BSRandomizer extends JFrame {
     private final JCheckBox[] checkBoxes;
     private final JLabel nameLabel;
 
-    private final Map<Integer, String> nameMap;
+    private final HashMap<Integer, String> nameMap;
 
     public BSRandomizer() {
         setTitle("BrawlStars Randomizer");
