@@ -3,7 +3,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
+@SuppressWarnings("ALL")
 public class BSRandomizer extends JFrame {
     private final JCheckBox[] checkBoxes;
     private final JLabel nameLabel;
@@ -14,6 +14,7 @@ public class BSRandomizer extends JFrame {
         setTitle("BrawlStars Randomizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
+        //cocm
 
         //Map
         nameMap = new HashMap<>();
