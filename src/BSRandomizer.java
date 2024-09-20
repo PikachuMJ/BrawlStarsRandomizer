@@ -7,16 +7,13 @@ public class BSRandomizer extends JFrame {
     private final JCheckBox[] checkBoxes;
     private final JLabel nameLabel;
 
-    private final HashMap<Integer, String> nameMap;
+    private final HashMap<Integer, String> nameMap = new HashMap<>();
 
     public BSRandomizer() {
         setTitle("BrawlStars Randomizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
-        //cocm
 
-        //Map
-        nameMap = new HashMap<>();
         String[] names = {
                 "Shelly", "Colt", "Bull", "Brock", "Spike", "Barley", "Jessie", "Dynamike",
                 "El Primo", "Mortis", "Poco", "Bo", "Piper", "Tara", "Darryl", "Penny",
