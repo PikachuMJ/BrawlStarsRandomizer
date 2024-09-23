@@ -6,7 +6,7 @@ import java.util.Random;
 public class BSRandomizer extends JFrame {
     private final JCheckBox[] checkBoxes;
     private final JLabel nameLabel;
-
+    private String[] names;
     private final HashMap<Integer, String> nameMap = new HashMap<>();
 
     public BSRandomizer() {
@@ -14,7 +14,7 @@ public class BSRandomizer extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600);
 
-        String[] names = {
+        names = new String[]{
                 "Shelly", "Colt", "Bull", "Brock", "Spike", "Barley", "Jessie", "Dynamike",
                 "El Primo", "Mortis", "Poco", "Bo", "Piper", "Tara", "Darryl", "Penny",
                 "Gene", "Tick", "Leon", "Carl", "Bibi", "8-Bit", "Bea", "Emz", "Mr.P",
@@ -25,16 +25,16 @@ public class BSRandomizer extends JFrame {
                 "Larry-Lawrie", "Angelo", "Draco", "Lily", "Melodie", "Charlie",
                 "Cordelius", "R-T", "Buster", "Bonnie", "Lola", "Buzz", "Stu",
                 "Lou", "Sprout", "Max", "Sandy", "Rosa", "Frank", "Pam", "Crow",
-                "Nita", "Rico"
+                "Nita", "Rico", "Berry", "Clancy", "Kenji", "Mo"
         };
         for (int i = 0; i < names.length; i++) {
             nameMap.put(i+1, names[i]);
         }
 
         // CheckBox Panel :O
-        JPanel checkBoxPanel = new JPanel(new GridLayout(10, 8));
-        checkBoxes = new JCheckBox[80];
-        for (int i = 0; i < 80; i++) {
+        JPanel checkBoxPanel = new JPanel(new GridLayout(names.length / 10, names.length / 10));
+        checkBoxes = new JCheckBox[names.length];
+        for (int i = 0; i < names.length; i++) {
             int bNum = i + 1;
             checkBoxes[i] = new JCheckBox();
             checkBoxes[i].setIcon(new ImageIcon("resources/Keep/image_" + bNum + ".png"));
@@ -48,6 +48,7 @@ public class BSRandomizer extends JFrame {
 
         JScrollPane scrollPane = new JScrollPane(checkBoxPanel);
         scrollPane.getVerticalScrollBar().setUnitIncrement(20);
+        scrollPane.getHorizontalScrollBar().setUnitIncrement(20);
         add(scrollPane, BorderLayout.CENTER);
 
         // Knopf zum random number generator dings
@@ -88,7 +89,7 @@ public class BSRandomizer extends JFrame {
 
     private int generateRandomNumber() {
         Random rand = new Random();
-        return rand.nextInt(80) + 1;
+        return rand.nextInt(names.length) + 1;
     }
 
     public static void main(String[] BSRandom) {
